@@ -65,14 +65,41 @@ public class Main {
             //Escriba un programa que solicite al usuario que ingrese una lista de nombres
             //de personas y sus edades, y luego ordene la lista por edad. Utilice un
             //TreeMap para almacenar los nombres y las edades.
-            case 3:
-            {
-                Scanner s = new Scanner();
-                String names = s.nextLine();
+            case 3: {
+                String eleccion;
+                TreeMap<Integer,String> arbolitoPersonas = new TreeMap<>();
 
-                TreeMap<>
+                do {
+
+                System.out.println("Ingrese un nombre:\n");
+                Scanner s = new Scanner(System.in);
+                String names = s.nextLine();
+                System.out.println("Ingrese una edad:\n");
+                Scanner i = new Scanner(System.in);
+                Integer age = i.nextInt();
+
+                arbolitoPersonas.put(age,names);
+
+                System.out.println("Desea cargar otra persona? (s/n)");
+                Scanner c = new Scanner(System.in);
+                eleccion = c.next();
+                }while (eleccion.contains("s"));
+
+                System.out.println(arbolitoPersonas.toString());
+
 
             }
+
+            //Escriba un programa que lea una lista de números enteros y luego calcule la
+            //suma y el promedio. Utilice un ArrayList para almacenar los números y una
+            //HashMap para calcular la frecuencia de cada número. (Averiguar cómo hacer
+            //una suma de elementos de una lista con streams). Stream es un flujo de
+            //datos que a través de métodos concatenados podemos filtrarlos, modificarlos
+            //y realizar distintas operaciones que devuelvan un flujo totalmente diferente.
+            case 4: {
+
+            }
+
 
         }
 
