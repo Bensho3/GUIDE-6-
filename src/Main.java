@@ -62,6 +62,17 @@ public class Main {
                 System.out.println("HashMap ordenado: " + mapitaOrdenado.toString());
             }
 
+            //Escriba un programa que solicite al usuario que ingrese una lista de nombres
+            //de personas y sus edades, y luego ordene la lista por edad. Utilice un
+            //TreeMap para almacenar los nombres y las edades.
+            case 3:
+            {
+                Scanner s = new Scanner();
+                String names = s.nextLine();
+
+                TreeMap<>
+
+            }
 
         }
 
