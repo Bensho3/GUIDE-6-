@@ -1,6 +1,7 @@
 import com.sun.source.doctree.EscapeTree;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,6 +16,7 @@ public class Main {
             //luego cuente el número de veces que cada carácter aparece en la cadena.
             //Utilice un HashMap para almacenar los resultados y muestre el mapa al
             //usuario al final.
+
             case 1: {
                 System.out.printf("---------------------------------EJECICIO 1---------------------------------");
                 Map<Character, Integer> mapChain = new HashMap();
@@ -42,6 +44,7 @@ public class Main {
             //Escriba un programa que genere una lista de números aleatorios, la ordene y
             //luego elimine los duplicados. Utilice un HashSet para almacenar los números
             //únicos y un ArrayList para la lista original.
+
             case 2: {
                 List<Integer> listita = new ArrayList<>();
                 HashMap<Integer, Integer> mapitaOrdenado = new HashMap<>();
@@ -96,13 +99,70 @@ public class Main {
             //una suma de elementos de una lista con streams). Stream es un flujo de
             //datos que a través de métodos concatenados podemos filtrarlos, modificarlos
             //y realizar distintas operaciones que devuelvan un flujo totalmente diferente.
+
             case 4: {
+
+                ArrayList <Integer> nums = new ArrayList<>();
+                String eleccion;
+
+
+                do {
+
+                    System.out.println("Ingrese un numero:\n");
+                    Scanner s = new Scanner(System.in);
+
+                    nums.add(s.nextInt());
+
+                    System.out.println("Desea cargar otro numero? (s/n)");
+                    Scanner c = new Scanner(System.in);
+
+                    eleccion = c.next();
+                }while (eleccion.contains("s"));
+
+                System.out.println(nums.toString());
+
+                Integer suma = nums.stream().mapToInt(Integer::intValue).sum();
+                System.out.println("Suma de numeros:" + suma);
+
+                Double promedio = nums.stream().mapToDouble(Integer::doubleValue).average().orElse(0);
+
+                System.out.println("Promedio de numeros:" + promedio);
+
+            }
+
+            //Escriba un programa que lea una lista de números enteros y luego ordene la
+            //lista en orden ascendente y descendente. Utilice un TreeSet para almacenar
+            //los números y mostrarlos en orden ascendente y descendente.
+
+            case 5:{
+                ArrayList <Integer> nums = new ArrayList<>();
+                TreeSet <Integer> orden = new TreeSet<>();
+                String eleccion;
+
+
+                do {
+
+                    System.out.println("Ingrese un numero:\n");
+                    Scanner s = new Scanner(System.in);
+
+                    nums.add(s.nextInt());
+                    orden.add(nums.getLast());
+
+                    System.out.println("Desea cargar otro numero? (s/n)");
+                    Scanner c = new Scanner(System.in);
+
+                    eleccion = c.next();
+                }while (eleccion.contains("s"));
+
+                System.out.println("Lisa de numeros:" + nums);
+
+
+
+                }
+
+                }
 
             }
 
 
         }
-
-
-    }
-}
