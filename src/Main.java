@@ -68,6 +68,7 @@ public class Main {
             //Escriba un programa que solicite al usuario que ingrese una lista de nombres
             //de personas y sus edades, y luego ordene la lista por edad. Utilice un
             //TreeMap para almacenar los nombres y las edades.
+
             case 3: {
                 String eleccion;
                 TreeMap<Integer,String> arbolitoPersonas = new TreeMap<>();
@@ -160,6 +161,37 @@ public class Main {
 
                 }
 
+            //Cree una clase Persona con los atributos nombre, dni y edad. Luego debe
+            //crear otra clase que se encargue de la alta, baja y modificación de las
+            //personas. Esta última clase debe tener un HashMap de Personas donde la
+            //clave sea el dni y el valor el objeto Persona. Además de los métodos de ABM
+            //se debe contar con uno que agregue un objeto ya creado, otro que tome una
+            //lista de Personas y las agregue en el Map, y por último, un método que
+            //devuelva la estructura ordenada por edad. Pista: El HashMap no es una
+            //estructura de datos ordenada, por ende, el método no puede devolver este
+            //tipo de mapa
+
+            case 6:{
+                ABM gestor = new ABM();
+
+                Persona persona1 = new Persona("Juan", 20, "12345678");
+                Persona persona2 = new Persona("Matias", 30, "87654321");
+                Persona persona3 = new Persona("Pedro", 18, "789456123");
+                Persona persona4 = new Persona("Maria", 20, "96325874");
+                Persona persona5 = new Persona("Ana", 40, "321654987");
+
+                ArrayList<Persona> lista = new ArrayList<>(Arrays.asList(persona1, persona2, persona3, persona4, persona5));
+
+                gestor.addAll(lista);
+
+                gestor.altaPersona();
+
+                gestor.eliminarPersona("12345678");
+
+                gestor.modificarPersona();
+
+                gestor.listarPersonas();
+            }
                 }
 
             }
